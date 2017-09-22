@@ -1,0 +1,84 @@
+
+body {
+  margin: 0 auto;    
+  background-image: url("../img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#jumbo{
+    
+    background-color: aqua;
+}
+
+#jumbo h1{
+    
+    text-align: center;
+}
+
+#ins{
+    
+   
+    width: 90%;
+    position: relative;
+    display: none;
+    margin-top: 10px;
+    margin-left: 40px;    
+    background-color: aquamarine;
+}
+
+#ins a{
+    
+    text-decoration: none;
+    margin: 0 100%;
+}
+
+#juego{
+    
+    display:none;
+    background-color: coral;
+}
+
+#interiorJuego{
+    width: 100%;
+    
+}
+
+#textoAhorcado{
+    text-align: center;
+    width: 100%;
+    height: 40px;
+   
+    
+}
+
+.claseAhorcado{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+}
+
+#textoAdivinar{
+    text-align: center;
+   
+   
+}
+#tablaBotones{
+    margin: 0 auto;
+    margin-top:200px;
+    
+    
+}
+
+#tablaBotones td  input{
+    
+    
+    height: 75px;
+    width: 75px;
+    border-radius: 50px;
+    font-size: 30px;
+}
