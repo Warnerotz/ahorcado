@@ -1,7 +1,9 @@
-window.onload = function () {
-
+window.onload = function () {    
+    var arrayAhorcado= ["A","H","O","R","C","A","D","O"];
     var adivina = seleccionarPalabra();
-    var cadena = adivina.split("");
+    var adivinaCadena = adivina.split("");
+    var numIntentos = arrayAhorcado.length;
+    var numAciertos = 0;    
     //muestra las instrucciones
     document.getElementById("instrucciones").addEventListener("mouseover", mostrar, false);
     //muestra la pantalla de juego
@@ -10,25 +12,49 @@ window.onload = function () {
     document.getElementById("jugar").addEventListener("click", crearPalabra, false);
     //comprobar botones
     var teclado = document.getElementsByClassName("botonTeclado");
-    for (var i = 0; i < teclado.length; i++) {        
-       
+    for (var i = 0; i < teclado.length; i++) {
+
         teclado[i].addEventListener("click", comprueba, false);
     }
 
     function comprueba() {
-        
 
+        //variable de control para los botones de las letras
         var encontrada = false;
-        for (var i = 0; i < cadena.length; i++) {
-            if (cadena[i].toUpperCase() == this.value.toUpperCase()) {
-                encontrada = true;
-            }
-        }
 
+        //recorre el array de la palabra a adininar.
+        for (var i = 0; i < adivinaCadena.length; i++) {
+            //si la letra coincide con alguna de la palabra a adivinar la introduce en el el input correspondiente.
+            if (adivinaCadena[i].toUpperCase() == this.value.toUpperCase()) {
+                encontrada = true;
+                document.getElementById("celdaletra" + i).value = this.value;
+                numAciertos++;
+            }
+            
+            //cuando acierte la palabra saldra un mensaje que ha acertado la palabra
+            
+            if(numAciertos == adivinaCadena.length){
+                
+                alert("palabra acertada");
+            }
+            
+        }
+        //si la letra es correcta se pone verde y se bloquea sino roja y se bloquea
         if (encontrada == true) {
             this.classList.add('btn-success');
+            this.setAttribute("disabled", "disabled");
         } else {
             this.classList.add('btn-danger');
+            this.setAttribute("disabled", "disabled");
+            
+            document.getElementById("celdaAhor"+(arrayAhorcado.length-numIntentos)).style.display= "inline";
+            document.getElementById("celdaAhor"+(arrayAhorcado.length-numIntentos)).style.backgroundColor= "transparent";
+            numIntentos--;
+            
+            if(numIntentos==0){
+                
+                alert("Has perdido tio");
+            }
         }
 
 
@@ -68,15 +94,43 @@ window.onload = function () {
 
 
     }
-
+    //funcion para crear el espacio de la palabra a adivinar 
     function crearPalabra() {
 
         var textoAdivinar = document.getElementById("textoAdivinar");
+
         for (var i = 0; i < adivina.length; i++) {
-            textoAdivinar.innerHTML += "<input type='text' maxlength='1' class='claseAhorcado' value=" + i + ">";
-
-
+            var input = document.createElement("input");
+            input.setAttribute("type", "text");
+            input.setAttribute("style", "background-color:transparent");
+            input.setAttribute("maxlength", "1");
+            input.setAttribute("class", "claseAdivina");
+            input.setAttribute("id", "celdaletra" + i);
+            input.setAttribute("value", "_");
+            textoAdivinar.appendChild(input);
         }
+        
+        //crea los espacios de la palabra ahorcado
+        crearAhorcado();
+
+    }
+
+    function crearAhorcado() {
+        
+        
+        for (var i = 0; i < arrayAhorcado.length; i++) {
+            var input = document.createElement("input");
+            input.setAttribute("type", "text");
+            input.setAttribute("style", "background-color:transparent");
+            input.setAttribute("maxlength", "1");
+            input.setAttribute("class", "claeAhorcado");
+            input.setAttribute("id", "celdaAhor" + i);
+            input.setAttribute("value", arrayAhorcado[i]);
+            input.setAttribute("style","display:none");
+            document.getElementById("textoAhorcado").appendChild(input);
+
+        }   
+
 
     }
 
