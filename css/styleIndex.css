@@ -1,94 +1,123 @@
-
-body {
-  margin: 0 auto;    
-  background: url("../img/fondo.jpg") no-repeat center center fixed;
-  
-  background-size: 90% 100%;
+.centrado {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+body{
+    
+    background-color: red;
 }
 
-#jumbo{
+/*
+#cuerpo {
+    margin: 0 auto;
     
-    background-color: aqua;
 }
-
-#jumbo h1{
-    
+*/
+#jumbo {
+    background: url("../img/muro.jpg") no-repeat;
+    background-size:cover ;
+    color:red;
     text-align: center;
 }
 
-#ins{
+
+
+#inicio {
     
-   
+    background: url("../img/ahorcado.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+#botonera{
+ width: 100%;
+ height: 300px;    
+    
+}
+
+#divJugar{
+    width: 100%;
+    height: 40px;
+    
+}
+
+#ins {
     width: 90%;
     position: relative;
     display: none;
     margin-top: 10px;
-    margin-left: 40px;    
+    margin-left: 40px;
     background-color: aquamarine;
 }
 
-#ins a{
-    
+#ins a {
     text-decoration: none;
     margin: 0 100%;
 }
 
-#juego{
-    
-    display:none;
-    background-color: coral;
+#juego {
+    display: none;
 }
 
-#interiorJuego{
+#interiorJuego {
     width: 100%;
-    
 }
 
-#textoAhorcado{
+#textoAhorcado {
     text-align: center;
     width: 100%;
     height: 100px;
-   
-    
 }
 
-.claeAhorcado{
+.claeAhorcado {
     width: 100px;
-    height: 100px;   
+    height: 100px;
     font-size: 50px;
+    color:red;
     text-transform: uppercase;
     text-align: center;
     border: none;
-    
 }
 
-.claseAdivina{
+
+
+.claseAdivina {
     width: 100px;
     height: 100px;
     margin: 5px;
     font-size: 50px;
+    color:white;
     text-transform: uppercase;
     text-align: center;
     border: none;
 }
 
-#textoAdivinar{
+#textoAdivinar {
     text-align: center;
-   
-   
-}
-#tablaBotones{
-    margin: 0 auto;
-    margin-top:200px;
-    
-    
 }
 
-#tablaBotones td  input{
+.botonTeclado{
+    background: url("../img/fondoboton.jpg") no-repeat;
+    background-size: cover;
     
     
-    height: 75px;
-    width: 75px;
-    border-radius: 50px;
-    font-size: 30px;
+}
+#tablaBotones {
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+#tablaBotones tr td {
+    height: 60px;
+    width: 40px;
+}
+
+#tablaBotones td input {
+    height: 60px;
+    width: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
 }

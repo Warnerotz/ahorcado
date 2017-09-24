@@ -83,10 +83,10 @@ window.onload = function () {
                 //en caso de que le des a jugar ocultara toda la pantalla y mostrara la pantalla de juego             
             case "jugar":
                 //lo que oculta.
-                document.getElementById("inicio").style.display = "none";
+                document.getElementById("botonera").style.display = "none";
                 document.getElementById("ins").style.display = "none";
                 //muestra el juego.
-                document.getElementById("juego").style.display = "inline";
+                document.getElementById("juego").style.display = "block";
                 break;
 
 

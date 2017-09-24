@@ -27,23 +27,33 @@ si pongo display inline en el juego donde se va el fondo? mejor inline o mejor b
     <title>Ahorcado</title>
 </head>
 
-<body>
-    <section class="jumbotron" id="jumbo">
+<body id="cuerpo">
+    <div class="jumbotron" id="jumbo">
         <h1>El Juego del Ahorcado</h1>
-    </section>
+    </div>
 
 
-    <div class="container" id="inicio">
+    <div class="container centrado" id="inicio">
+
+        <div class="row col-lg-12 col-xs-6" id="botonera">
+            <div id="divJugar">
+                <button type="button" class="btn btn-default btn-lg btn-block" id="jugar" value="Jugar">Jugar</button>
+
+            </div>
+            
+            <div>
+                <input type="button" class="btn btn-default btn-lg btn-block col-lg-12" id="multijugador" value="Multijugador">
+            </div>
           
-        <div class="row col-lg-12 col-xs-6">
-            <input type="button" class="btn btn-default btn-lg btn-block" id="jugar" value="Jugar">
-            <input type="button" class="btn btn-default btn-lg btn-block" id="multijugador" value="Multijugador">
-            <input type="button" class="btn btn-default btn-lg btn-block" id="instrucciones" value="Instrucciones">
+            <div>
+                <input type="button" class="btn btn-default btn-lg btn-block" id="instrucciones" value="Instrucciones">
+            </div>
+
         </div>
 
         <!-- instrucciones que se ocultan y muestran x js-->
-    
-                   <div class="row col-lg-12" id="ins">
+
+        <div class="row col-lg-12" id="ins">
             <div class="list-group">
                 <a href="index.html">X</a>
                 <p>El programa propondrá aleatoriamente una palabra.</p>
@@ -55,143 +65,143 @@ si pongo display inline en el juego donde se va el fondo? mejor inline o mejor b
         </div>
 
 
+        <div id="juego">
+            <div class="row" id="interiorJuego">
 
+                <div class="col-lg-12" id="textoAhorcado">
+
+                </div>
+
+                <div class="col-lg-12" id="textoAdivinar">
+                    <!--    <input type="text" value="texto adivinar"> -->
+
+                </div>
+
+                <table class="col-lg-6" id="tablaBotones">
+                    <tr>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="A">
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="B">
+                        </td>
+
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="C">
+
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="D">
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="E">
+
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="F">
+
+                        </td>
+
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="G">
+
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="H">
+
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="I">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="J">
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="K">
+                        </td>
+
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="L">
+
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="M">
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="N">
+
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="Ñ">
+
+                        </td>
+
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="O">
+
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="P">
+
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="Q">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="R">
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="S">
+                        </td>
+
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="T">
+
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="U">
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="V">
+
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="W">
+
+                        </td>
+
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="X">
+
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="Y">
+
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default botonTeclado" value="Z">
+                        </td>
+                    </tr>
+
+
+
+                </table>
+            </div>
+
+        </div>
 
 
 
     </div>
 
     <!--Pantalla de juego !!-->
-    <div class="container" id="juego">
-        <div class="row" id="interiorJuego">
-            
-            <div class="col-lg-12" id="textoAhorcado">
-                
-            </div>
 
-            <div class="col-lg-12" id="textoAdivinar">
-            <!--    <input type="text" value="texto adivinar"> -->
-
-            </div>
-
-            <table class="col-lg-6" id="tablaBotones">
-                <tr>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="A">
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="B">
-                    </td>
-
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="C">
-
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado"  value="D">
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="E">
-
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="F">
-
-                    </td>
-
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="G">
-
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado"  value="H">
-
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado"  value="I">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado"  value="J">
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="K">
-                    </td>
-
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="L">
-
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado"  value="M">
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado"  value="N">
-
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="Ñ">
-
-                    </td>
-
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado"  value="O">
-
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado"  value="P">
-
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="Q">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="R">
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="S">
-                    </td>
-
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="T">
-
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="U">
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="V">
-
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="W">
-
-                    </td>
-
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="X">
-
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="Y">
-
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-default botonTeclado" value="Z">
-                    </td>
-                </tr>
-
-
-
-            </table>
-        </div>
-
-    </div>
 
 
 
