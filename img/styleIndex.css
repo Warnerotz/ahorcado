@@ -1,0 +1,88 @@
+.centrado {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+#cuerpo {
+    margin: 0 auto;
+    background-color: #FCF3CF;
+}
+
+h1{
+    text-align: center;
+    
+}
+#imagen img{
+    width: 100%;
+    height: 100%;
+    
+    
+}
+
+#ins {
+  text-align: justify;
+}
+
+
+#juego {
+    display: none;
+}
+
+
+
+#interiorJuego {
+    width: 100%;
+}
+
+#textoAhorcado {
+    text-align: center;
+    width: 100%;
+    height: 100px;
+}
+
+.claeAhorcado {
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    color: red;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+}
+
+.claseAdivina {   
+    font-size: 50px;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    float:left;
+    asd;
+}
+
+#textoAdivinar {
+    text-align: center;
+}
+
+.botonTeclado {}
+
+#tablaBotones {
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+#tablaBotones tr td {
+    height: 60px;
+    width: 40px;
+}
+
+#tablaBotones td input {
+    height: 60px;
+    width: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
