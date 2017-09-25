@@ -24,6 +24,11 @@ h1{
     text-align: center;
     
 }
+
+.tabla{
+    border-collapse: separate;
+    
+}
 #imagen img{
     width: 100%;
     height: 100%;
@@ -54,8 +59,8 @@ h1{
 }
 
 .claeAhorcado {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+   
     font-size: 50px;
     color: red;
     text-transform: uppercase;
@@ -69,7 +74,7 @@ h1{
     text-transform: uppercase;
     text-align: center;
     border: none;
-    float:left;
+    
     
 }
 

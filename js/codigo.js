@@ -28,7 +28,7 @@ window.onload = function () {
             //si la letra coincide con alguna de la palabra a adivinar la introduce en el el input correspondiente.
             if (adivinaCadena[i].toUpperCase() == this.value.toUpperCase()) {
                 encontrada = true;
-                document.getElementById("celdaletra" + i).value = this.value;
+                document.getElementById("celdaLetra" + i).innerHTML = this.value;
                 numAciertos++;
             }
 
@@ -94,10 +94,10 @@ window.onload = function () {
     //funcion para crear el espacio de la palabra a adivinar 
     function crearTablaPalabra(){
         var tbl1 = document.createElement('table');
-        tbl1.classList.add("table");
-        tbl1.classList.add("col-md-12");
+        tbl1.classList.add("tabla");
+        tbl1.classList.add("col-md-6");
         var tr1 = tbl1.insertRow();
-        for(var i = 0; i < arrayAhorcado.length; i++)  {
+        for(var i = 0; i < adivina.length; i++)  {
             var td1 = tr1.insertCell();
             td1.setAttribute("id", "celdaLetra"+i);
             td1.setAttribute("class", "claseAdivina");
@@ -109,7 +109,7 @@ window.onload = function () {
         
         crearTablaAhorcado(); 
     }
-    
+  /*  
     function crearPalabra() {
 
         var textoAdivinar = document.getElementById("textoAdivinar");
@@ -134,13 +134,15 @@ window.onload = function () {
         crearAhorcado();
 
     }
-    
+*/    
     
     function crearTablaAhorcado(){
         
         
         // creamos la tabla con la palabra AHORCADO
         var tbl1 = document.createElement('table');
+        tbl1.classList.add("tabla");
+        tbl1.classList.add("col-md-6");
         var tr1 = tbl1.insertRow();
         for(var i = 0; i < arrayAhorcado.length; i++)  {
             var td1 = tr1.insertCell();
@@ -153,6 +155,7 @@ window.onload = function () {
         document.getElementById("textoAhorcado").appendChild(tbl1);
     }
 
+    /*
     function crearAhorcado() {
 
 
@@ -173,6 +176,8 @@ window.onload = function () {
 
 
     }
+    */
+    
 
     function crearTeclado(){
         
