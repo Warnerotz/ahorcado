@@ -5,61 +5,33 @@
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
 }
-body{
-    
-    background-color: red;
-}
 
-/*
 #cuerpo {
     margin: 0 auto;
-    
+    background-color: #FCF3CF;
 }
-*/
-#jumbo {
-    background: url("../img/muro.jpg") no-repeat;
-    background-size:cover ;
-    color:red;
+
+h1{
     text-align: center;
-}
-
-
-
-#inicio {
-    
-    background: url("../img/ahorcado.jpg") no-repeat;
-    background-size: 100% 100%;
-}
-
-#botonera{
- width: 100%;
- height: 300px;    
     
 }
-
-#divJugar{
+#imagen img{
     width: 100%;
-    height: 40px;
+    height: 100%;
+    
     
 }
 
 #ins {
-    width: 90%;
-    position: relative;
-    display: none;
-    margin-top: 10px;
-    margin-left: 40px;
-    background-color: aquamarine;
+  text-align: justify;
 }
 
-#ins a {
-    text-decoration: none;
-    margin: 0 100%;
-}
 
 #juego {
     display: none;
 }
+
+
 
 #interiorJuego {
     width: 100%;
@@ -75,35 +47,28 @@ body{
     width: 100px;
     height: 100px;
     font-size: 50px;
-    color:red;
+    color: red;
     text-transform: uppercase;
     text-align: center;
     border: none;
 }
 
-
-
-.claseAdivina {
-    width: 100px;
-    height: 100px;
-    margin: 5px;
+.claseAdivina {   
     font-size: 50px;
-    color:white;
+    color: black;
     text-transform: uppercase;
     text-align: center;
     border: none;
+    float:left;
+    asd;
 }
 
 #textoAdivinar {
     text-align: center;
 }
 
-.botonTeclado{
-    background: url("../img/fondoboton.jpg") no-repeat;
-    background-size: cover;
-    
-    
-}
+.botonTeclado {}
+
 #tablaBotones {
     margin: 0 auto;
     margin-top: 200px;
