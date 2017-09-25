@@ -1,5 +1,6 @@
 window.onload = function () {
     var arrayAhorcado = ["A", "H", "O", "R", "C", "A", "D", "O"];
+    var abecedario = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","U","V","W","X","Y","Z"];
     var adivina = seleccionarPalabra();
     var adivinaCadena = adivina.split("");
     var numIntentos = arrayAhorcado.length;
@@ -9,7 +10,7 @@ window.onload = function () {
     //muestra la pantalla de juego
     document.getElementById("jugar").addEventListener("click", mostrar, false);
     //crea los inputs de la palabra a adivinar
-    document.getElementById("jugar").addEventListener("click", crearPalabra, false);
+    document.getElementById("jugar").addEventListener("click", crearTablaPalabra, false);
     //comprobar botones
     var teclado = document.getElementsByClassName("botonTeclado");
     for (var i = 0; i < teclado.length; i++) {
@@ -91,6 +92,24 @@ window.onload = function () {
 
     }
     //funcion para crear el espacio de la palabra a adivinar 
+    function crearTablaPalabra(){
+        var tbl1 = document.createElement('table');
+        tbl1.classList.add("table");
+        tbl1.classList.add("col-md-12");
+        var tr1 = tbl1.insertRow();
+        for(var i = 0; i < arrayAhorcado.length; i++)  {
+            var td1 = tr1.insertCell();
+            td1.setAttribute("id", "celdaLetra"+i);
+            td1.setAttribute("class", "claseAdivina");
+            td1.appendChild(document.createTextNode(""));
+            td1.style.borderBottom = "thick solid black";
+            td1.style.width="40px";;
+        }   
+        document.getElementById("textoAdivinar").appendChild(tbl1);
+        
+        crearTablaAhorcado(); 
+    }
+    
     function crearPalabra() {
 
         var textoAdivinar = document.getElementById("textoAdivinar");
@@ -111,8 +130,27 @@ window.onload = function () {
         }
 
         //crea los espacios de la palabra ahorcado
+        //crearTablaAhorcado();
         crearAhorcado();
-asd
+
+    }
+    
+    
+    function crearTablaAhorcado(){
+        
+        
+        // creamos la tabla con la palabra AHORCADO
+        var tbl1 = document.createElement('table');
+        var tr1 = tbl1.insertRow();
+        for(var i = 0; i < arrayAhorcado.length; i++)  {
+            var td1 = tr1.insertCell();
+            td1.setAttribute("id", "celdaAhor"+i);
+            td1.setAttribute("class", "claeAhorcado");
+            td1.appendChild(document.createTextNode(arrayAhorcado[i]));
+            td1.style.borderBottom = "thick solid #F5F5DC";
+            td1.style.display = "none";
+        }   
+        document.getElementById("textoAhorcado").appendChild(tbl1);
     }
 
     function crearAhorcado() {
@@ -125,6 +163,7 @@ asd
             input.setAttribute("maxlength", "1");
             input.setAttribute("readonly","readonly");
             input.setAttribute("class", "claeAhorcado");
+            input.classList.add("col-md-1");
             input.setAttribute("id", "celdaAhor" + i);
             input.setAttribute("value", arrayAhorcado[i]);
             input.setAttribute("style", "display:none");
@@ -135,7 +174,16 @@ asd
 
     }
 
-
+    function crearTeclado(){
+        
+        var tabla = document.createElement('table');
+        for(var i =0; i<3; i++){
+            var fila = tabla.insertRow();
+            
+            
+        }
+        
+    }
 
 
 
