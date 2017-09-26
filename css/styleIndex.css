@@ -1,3 +1,7 @@
+body{
+    height: 760px;
+    
+}
 .centrado {
     position: absolute;
     left: 50%;
@@ -9,9 +13,7 @@
 
 
 #todo{
-    
-    left: 25%;
-    top: 25%;
+
     
 }
 
@@ -93,7 +95,10 @@ h1{
     
 }
 
-.botonTeclado {}
+#botones {
+    
+    margin-top: 20px;
+}
 
 #tablaBotones {
     margin: 0 auto;
@@ -116,17 +121,41 @@ h1{
 
 #pierde{
     display:none;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
     
 }
 
 #botonReiniciar{
     display:none;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
     
 }
 
 #gana{
     
     display:none;
+}
+
+#menPierde{
+    border: solid 1px red;
+    background-color: #FDAAA5;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+#textoGana{
+    border: solid 1px green;
+    background-color: #9DFCA6;
+    padding: 10px;
+    text-align: center;
+    
 }
 
 #textoGana{

@@ -10,25 +10,33 @@ window.onload = function () {
 
     //muestra la pantalla de juego
     document.getElementById("jugar").addEventListener("click", mostrar, false);
-    //crea los inputs de la palabra a adivinar
-    //document.getElementById("jugar").addEventListener("click", crearTablaPalabra, false);
+    //crea los inputs de la palabra a adivinar    
     document.getElementById("reiniciar").addEventListener("click", reiniciar, false);
+    //salir del juego
+    document.getElementById("salir").addEventListener("click",salir,false);
+    //document.getElementById("volverAjugar").addEventListener("click",reiniciar,false);
     //comprobar botones
     var teclado = document.getElementsByClassName("botonTeclado");
     listenersTeclado();
 
     function reiniciar() {
-        
+        //elimino las cosas que hay
         var tAdivine = document.getElementById("tablaPalabra");
         tAdivine.parentNode.removeChild(tAdivine);
         var tAhor = document.getElementById("tablaAhorcado");
         tAhor.parentNode.removeChild(tAhor);
         var tTeclado = document.getElementById("tablaBotones");
+        var tmenPierde = document.getElementById("textoh4");
+        tmenPierde.innerHTML="";
         tTeclado.parentNode.removeChild(tTeclado);
-        var adivina = seleccionarPalabra();
-        var adivinaCadena = adivina.split("");
-        var numIntentos = arrayAhorcado.length;
-        var numAciertos = 0;
+        document.getElementById("gana").style.display = "none";
+        document.getElementById("pierde").style.display="none";
+        document.getElementById("botonReiniciar").style.display = "none"; 
+        //vuelvo a cargar las cosas        
+        adivina = seleccionarPalabra();
+        adivinaCadena = adivina.split("");
+        numIntentos = arrayAhorcado.length;
+        numAciertos = 0;        
         crearTeclado();
         var teclado = document.getElementsByClassName("botonTeclado");
         listenersTeclado();
@@ -88,18 +96,12 @@ window.onload = function () {
             numIntentos--;
 
             if (numIntentos == 0) {
-
-                alert("Has perdido tio");
+                document.getElementById("textoh4").innerHTML = "Has perdido. La palabra era: "+adivina;
+                
+                document.getElementById("pierde").style.display="flex";
+                document.getElementById("botonReiniciar").style.display = "flex";
             }
         }
-
-
-
-
-
-
-
-
 
     }
 
@@ -152,32 +154,7 @@ window.onload = function () {
 
 
     }
-    /*  
-    function crearPalabra() {
 
-        var textoAdivinar = document.getElementById("textoAdivinar");
-
-        for (var i = 0; i < adivina.length; i++) {
-            var div= document.createElement("div");
-            div.classList.add("col-md-1");
-            var input = document.createElement("input");
-            input.setAttribute("type", "text");
-            input.setAttribute("style", "background-color:transparent");
-            input.setAttribute("maxlength", "1");
-            input.setAttribute("readonly","readonly");
-            input.setAttribute("class", "claseAdivina");
-            input.setAttribute("id", "celdaletra" + i);
-            input.setAttribute("value", "_");
-            div.appendChild(input);
-            textoAdivinar.appendChild(div);
-        }
-
-        //crea los espacios de la palabra ahorcado
-        //crearTablaAhorcado();
-        crearAhorcado();
-
-    }
-*/
 
     function crearTablaAhorcado() {
 
@@ -203,28 +180,7 @@ window.onload = function () {
         div.appendChild(tbl1);
     }
 
-    /*
-    function crearAhorcado() {
 
-
-        for (var i = 0; i < arrayAhorcado.length; i++) {
-            var input = document.createElement("input");
-            input.setAttribute("type", "text");
-            input.setAttribute("style", "background-color:transparent");
-            input.setAttribute("maxlength", "1");
-            input.setAttribute("readonly","readonly");
-            input.setAttribute("class", "claeAhorcado");
-            input.classList.add("col-md-1");
-            input.setAttribute("id", "celdaAhor" + i);
-            input.setAttribute("value", arrayAhorcado[i]);
-            input.setAttribute("style", "display:none");
-            document.getElementById("textoAhorcado").appendChild(input);
-
-        }
-
-
-    }
-    */
 
 
     function crearTeclado() {
