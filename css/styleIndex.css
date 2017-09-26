@@ -9,7 +9,7 @@
 
 
 #todo{
-     position: absolute;
+    
     left: 25%;
     top: 25%;
     
@@ -25,7 +25,14 @@ h1{
     
 }
 
+.centrarTabla{
+    text-align: center;
+    
+}
+
 .tabla{
+    margin:0 auto;
+    text-align: left;
     border-collapse: separate;
     
 }
@@ -90,7 +97,7 @@ h1{
 
 #tablaBotones {
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 #tablaBotones tr td {
@@ -104,4 +111,25 @@ h1{
     border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
+}
+
+
+#pierde{
+    display:none;
+    
+}
+
+#botonReiniciar{
+    display:none;
+    
+}
+
+#gana{
+    
+    display:none;
+}
+
+#textoGana{
+    text-align: center;
+    margin-top: 3%;
 }
