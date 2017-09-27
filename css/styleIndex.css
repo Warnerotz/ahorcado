@@ -1,7 +1,7 @@
-body{
+body {
     height: 760px;
-    
 }
+
 .centrado {
     position: absolute;
     left: 50%;
@@ -10,51 +10,39 @@ body{
     -webkit-transform: translate(-50%, -50%);
 }
 
-
-
-#todo{
-
-    
-}
+#todo {}
 
 #cuerpo {
     margin: 0 auto;
     background-color: #FCF3CF;
 }
 
-h1{
+h1 {
     text-align: center;
-    
 }
 
-.centrarTabla{
+.centrarTabla {
     text-align: center;
-    
 }
 
-.tabla{
-    margin:0 auto;
+.tabla {
+    margin: 0 auto;
     text-align: left;
     border-collapse: separate;
-    
 }
-#imagen img{
+
+#imagen img {
     width: 100%;
     height: 100%;
-    
-    
 }
 
 #ins {
-  text-align: justify;
+    text-align: justify;
 }
-
 
 #juego {
     display: none;
 }
-
-
 
 #interiorJuego {
     width: 100%;
@@ -62,14 +50,13 @@ h1{
 
 #textoAhorcado {
     font-size: 40px;
- 	color : #ff0000;
- 	height: 70px;
- 	margin-top: 5%;
+    color: #ff0000;
+    height: 70px;
+    margin-top: 5%;
 }
 
 .claeAhorcado {
     width: 60px;
-   
     font-size: 50px;
     color: red;
     text-transform: uppercase;
@@ -77,26 +64,22 @@ h1{
     border: none;
 }
 
-.claseAdivina {   
+.claseAdivina {
     font-size: 50px;
     color: black;
     text-transform: uppercase;
     text-align: center;
     border: none;
-    
-    
 }
 
 #textoAdivinar {
     font-size: 50px;
- 	color : black;
- 	height: 70px;
- 	margin-top: 20px;
-    
+    color: black;
+    height: 70px;
+    margin-top: 20px;
 }
 
 #botones {
-    
     margin-top: 20px;
 }
 
@@ -118,47 +101,51 @@ h1{
     font-weight: bold;
 }
 
-
-#pierde{
-    display:none;
+#pierde {
+    display: none;
     margin-top: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 10px;
-    
 }
 
-#botonReiniciar{
-    display:none;
+#botonReiniciar {
     margin-top: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 10px;
-    
 }
 
-#gana{
-    
-    display:none;
+#gana {
+    display: none;
 }
 
-#menPierde{
+#menPierde {
     border: solid 1px red;
     background-color: #FDAAA5;
     padding: 10px;
     text-align: center;
-    
 }
 
-#textoGana{
+#textoGana {
     border: solid 1px green;
     background-color: #9DFCA6;
     padding: 10px;
     text-align: center;
-    
 }
 
-#textoGana{
+#textoGana {
     text-align: center;
     margin-top: 3%;
+}
+
+#palabraEscribir {
+    display: none;
+    margin-top: 20px;
+}
+
+#intPal{
+    
+    display: block;
+    margin: 0 auto;
 }

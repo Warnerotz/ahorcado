@@ -8,16 +8,87 @@ window.onload = function () {
     crearTeclado();
     crearTablaAhorcado();
 
-    //muestra la pantalla de juego
     document.getElementById("jugar").addEventListener("click", mostrar, false);
-    //crea los inputs de la palabra a adivinar    
     document.getElementById("reiniciar").addEventListener("click", reiniciar, false);
-    //salir del juego
-    document.getElementById("salir").addEventListener("click",salir,false);
-    //document.getElementById("volverAjugar").addEventListener("click",reiniciar,false);
-    //comprobar botones
+
+    document.getElementById("salir").addEventListener("click", salir, false);
+
     var teclado = document.getElementsByClassName("botonTeclado");
     listenersTeclado();
+
+    document.getElementById("multi").addEventListener("click", multijugador, false);
+    document.getElementById("intPal").addEventListener("keypress", multijugador2, false);
+
+
+    function multijugador() {
+
+        document.getElementById("palabraEscribir").style.display = "flex";
+
+
+    }
+
+    function multijugador2(event) {
+        var evento = event;
+
+        if (evento.keyCode == 13 && document.getElementById("intPal").value != "") {
+            adivina = document.getElementById("intPal").value;
+            adivinaCadena = adivina.split("");
+            alert(adivina);
+            mostrar();
+           
+
+        }else{
+           
+            
+        }
+
+    }
+
+    function listenersTeclado() {
+        for (var i = 0; i < teclado.length; i++) {
+
+            teclado[i].addEventListener("click", comprueba, false);
+        }
+
+    }
+
+    function mostrar() {
+        document.getElementById("inicio").style.display = "none";
+        //muestra el juego.
+        document.getElementById("juego").style.display = "block";
+
+        crearTablaPalabra();
+
+
+    }
+
+    function crearTablaPalabra() {
+
+
+        var div = document.createElement("div");
+        div.setAttribute("id", "tablaPalabra");
+        div.classList.add("col-md-6");
+        div.classList.add("centrarTabla");
+        var tbl1 = document.createElement('table');
+        tbl1.classList.add("tabla");
+        tbl1.setAttribute("id", "pAdivina");
+        var tr1 = tbl1.insertRow();
+
+        for (var i = 0; i < adivina.length; i++) {
+            var td1 = tr1.insertCell();
+            td1.setAttribute("id", "celdaLetra" + i);
+            td1.setAttribute("class", "claseAdivina");
+            td1.appendChild(document.createTextNode(""));
+            td1.style.borderBottom = "thick solid black";
+            td1.style.width = "40px";;
+        }
+        document.getElementById("textoAdivinar").appendChild(div);
+        div.appendChild(tbl1);
+
+
+
+
+    }
 
     function reiniciar() {
         //elimino las cosas que hay
@@ -27,37 +98,21 @@ window.onload = function () {
         tAhor.parentNode.removeChild(tAhor);
         var tTeclado = document.getElementById("tablaBotones");
         var tmenPierde = document.getElementById("textoh4");
-        tmenPierde.innerHTML="";
+        tmenPierde.innerHTML = "";
         tTeclado.parentNode.removeChild(tTeclado);
         document.getElementById("gana").style.display = "none";
-        document.getElementById("pierde").style.display="none";
-        document.getElementById("botonReiniciar").style.display = "none"; 
+        document.getElementById("pierde").style.display = "none";
+
         //vuelvo a cargar las cosas        
         adivina = seleccionarPalabra();
         adivinaCadena = adivina.split("");
         numIntentos = arrayAhorcado.length;
-        numAciertos = 0;        
+        numAciertos = 0;
         crearTeclado();
         var teclado = document.getElementsByClassName("botonTeclado");
         listenersTeclado();
         crearTablaPalabra();
         crearTablaAhorcado();
-    }
-
-    function listenersTeclado(){
-        for (var i = 0; i < teclado.length; i++) {
-
-        teclado[i].addEventListener("click", comprueba, false);
-    }    
-        
-    }
-    
-    
-    function salir() {
-        location.reload();
-
-
-
     }
 
     function comprueba() {
@@ -78,7 +133,8 @@ window.onload = function () {
 
             if (numAciertos == adivinaCadena.length) {
                 document.getElementById("gana").style.display = "flex";
-                document.getElementById("botonReiniciar").style.display = "flex"; //document.getElementById("teclado").style.display = "none";
+                document.getElementById("botonReiniciar").style.display = "flex";
+                bloquearTeclado();
 
             }
 
@@ -96,72 +152,30 @@ window.onload = function () {
             numIntentos--;
 
             if (numIntentos == 0) {
-                document.getElementById("textoh4").innerHTML = "Has perdido. La palabra era: "+adivina;
-                
-                document.getElementById("pierde").style.display="flex";
+                document.getElementById("textoh4").innerHTML = "Has perdido. La palabra era: " + adivina;
+                document.getElementById("pierde").style.display = "flex";
                 document.getElementById("botonReiniciar").style.display = "flex";
+                bloquearTeclado();
             }
         }
 
     }
 
-
     function seleccionarPalabra() {
+
+
         var listaPalabras = ["coche", "moto", "camion"];
         var random = Math.floor(Math.random() * listaPalabras.length);
+
         return listaPalabras[random];
     }
-
-    function mostrar() {
-
-        //segun el id que le entra hace unas cosas u otras.
-        switch (this.id) {
-            case "jugar":
-                //lo que oculta.                
-                document.getElementById("inicio").style.display = "none";
-                //muestra el juego.
-                document.getElementById("juego").style.display = "block";
-                break;
-
-        }
-
-        crearTablaPalabra();
-
-
-    }
-    //funcion para crear el espacio de la palabra a adivinar 
-    function crearTablaPalabra() {
-        var div = document.createElement("div");
-        div.setAttribute("id","tablaPalabra");
-        div.classList.add("col-md-6");
-        div.classList.add("centrarTabla");
-        var tbl1 = document.createElement('table');
-        tbl1.classList.add("tabla");
-        tbl1.setAttribute("id", "pAdivina");
-        var tr1 = tbl1.insertRow();
-        for (var i = 0; i < adivina.length; i++) {
-            var td1 = tr1.insertCell();
-            td1.setAttribute("id", "celdaLetra" + i);
-            td1.setAttribute("class", "claseAdivina");
-            td1.appendChild(document.createTextNode(""));
-            td1.style.borderBottom = "thick solid black";
-            td1.style.width = "40px";;
-        }
-        document.getElementById("textoAdivinar").appendChild(div);
-        div.appendChild(tbl1);
-
-
-
-
-    }
-
 
     function crearTablaAhorcado() {
 
 
         // creamos la tabla con la palabra AHORCADO
         var div = document.createElement("div");
-        div.setAttribute("id","tablaAhorcado");
+        div.setAttribute("id", "tablaAhorcado");
         div.classList.add("col-md-6");
         div.classList.add("centrarTabla");
         var tbl1 = document.createElement('table');
@@ -179,9 +193,6 @@ window.onload = function () {
         document.getElementById("textoAhorcado").appendChild(div);
         div.appendChild(tbl1);
     }
-
-
-
 
     function crearTeclado() {
         var z = 0;
@@ -210,6 +221,19 @@ window.onload = function () {
 
     }
 
+    function bloquearTeclado() {
+        for (var i = 0; i < teclado.length; i++) {
+            teclado[i].setAttribute("disabled", "disabled");
+        }
+
+    }
+
+    function salir() {
+        location.reload();
+
+
+
+    }
 
 
 }

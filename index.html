@@ -51,14 +51,24 @@ si pongo display inline en el juego donde se va el fondo? mejor inline o mejor b
             </div>
             <div class="row">
                 <div class="col-md-3"></div>
-                <div class="col-md-6" id="divJugar">
+                <div class="col-md-3" id="divJugar">
                     <button type="button" class="btn btn-block btn-outline-warning" id="jugar" value="Jugar">Jugar</button>
+                </div>
+                <div class="col-md-3" id="divMulti">
+                    <button type="button" class="btn btn-block btn-outline-warning" id="multi" value="multi">Multijugador</button>
                 </div>
 
             </div>
+            <div class="row" id="palabraEscribir">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <input type="text" id="intPal" value=""/>
+                </div>
+            </div>
+        
 
         </div>
-
+        
         <div class="container" id="juego">
             <div class="row" id="textoAhorcado">
                 <div class="col-md-3"></div>
@@ -70,6 +80,16 @@ si pongo display inline en el juego donde se va el fondo? mejor inline o mejor b
             </div>
             <div class="row" id="teclado">
                 <!--se crea en js-->    
+            </div>
+            
+            <div class="row" id="botonReiniciar">
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-block btn-outline-warning" id="reiniciar" value="Jugar">volver a jugar</button>
+                </div>
+                 <div class="col-md-3">
+                    <button type="button" class="btn btn-block btn-outline-warning" id="salir" value="Jugar">Salir</button>
+                </div>
             </div>
         
             <div class="row" id="gana">
@@ -84,15 +104,7 @@ si pongo display inline en el juego donde se va el fondo? mejor inline o mejor b
                     <h4 id=textoh4></h4>
                 </div>                
             </div>
-            <div class="row" id="botonReiniciar">
-                <div class="col-md-3"></div>
-                <div class="col-md-3">
-                    <button type="button" class="btn btn-block btn-outline-warning" id="reiniciar" value="Jugar">volver a jugar</button>
-                </div>
-                 <div class="col-md-3">
-                    <button type="button" class="btn btn-block btn-outline-warning" id="salir" value="Jugar">Salir</button>
-                </div>
-            </div>
+            
             
             
         </div>
