@@ -1,17 +1,3 @@
-body {
-    height: 760px;
-}
-
-.centrado {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-}
-
-#todo {}
-
 #cuerpo {
     margin: 0 auto;
     background-color: #FCF3CF;
@@ -36,16 +22,8 @@ h1 {
     height: 100%;
 }
 
-#ins {
-    text-align: justify;
-}
-
 #juego {
     display: none;
-}
-
-#interiorJuego {
-    width: 100%;
 }
 
 #textoAhorcado {
