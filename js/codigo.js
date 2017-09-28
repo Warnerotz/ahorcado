@@ -28,6 +28,10 @@ window.onload = function () {
     //listener para crear el juego a partir de la palabra introducida en el input.
     document.getElementById("intPal").addEventListener("keypress", dosJugadores, false);
 
+    
+    
+    
+    
     //funcion que muestra el input para introducir la palabra a adivinar en el multijugador.
     function multijugador() {
         document.getElementById("palabraEscribir").style.display = "flex";
